@@ -1,0 +1,46 @@
+import { Canvas, Meta, ColorPalette, ColorItem } from "@storybook/blocks";
+
+<Meta title="Styles/Colors" />
+
+# Colors
+
+<br />
+
+## OVERVIEW
+
+<br />
+<ColorPalette>
+  <ColorItem
+    title="MAIN COLOR"
+    subtitle="메인컬러"
+    colors={{ BLUE1: "#bfdbfe", BLUE2: "#60a5fa", BLUE3: "#2563eb" }}
+  />
+  <ColorItem
+    title="ERROR & DELETE"
+    subtitle="에러 및 삭제 컬러"
+    colors={{ Primary3: "#f87171" }}
+  />
+  <ColorItem
+    title="GREY"
+    subtitle="Disable, Shadow, etc."
+    colors={{ Grey1: "#000000", Grey2: "#000000", Grey3: "#000000" }}
+  />
+</ColorPalette>
+
+## LIGHT MODE
+
+<br />
+
+<ColorPalette>
+  <ColorItem title="BACKGROUND" colors={{ Primary2: "#ffffff" }} />
+  <ColorItem title="TEXT" colors={{ Primary1: "#18181b" }} />
+</ColorPalette>
+
+## DARK MODE
+
+<br />
+
+<ColorPalette>
+  <ColorItem title="BACKGROUND" colors={{ Primary2: "#27272a" }} />
+  <ColorItem title="TEXT" colors={{ Primary1: "#f4f4f5" }} />
+</ColorPalette>
