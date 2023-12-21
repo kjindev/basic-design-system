@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import Layout from "./Layout";
+import Interaction from "./Interaction";
 
 const meta = {
-  title: "Foundation/Layout",
-  component: Layout,
+  title: "Components/Interaction",
+  component: Interaction,
   parameters: {
-    layout: "centered",
+    Interaction: "centered",
     docs: {
       source: {
-        code: "<Layout>Layout</Layout>",
+        code: "<Interaction>Interaction</Interaction>",
       },
     },
   },
@@ -18,26 +18,26 @@ const meta = {
   argTypes: {
     backgroundColor: { control: "color" },
   },
-} satisfies Meta<typeof Layout>;
+} satisfies Meta<typeof Interaction>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    label: "Layout",
+    label: "Interaction",
   },
 };
 
 export const Secondary: Story = {
   args: {
-    label: "Layout",
+    label: "Interaction",
   },
 };
 
 export const WithIcons: Story = {
   args: {
     size: "large",
-    label: "Layout",
+    label: "Interaction",
   },
 };
