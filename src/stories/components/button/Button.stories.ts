@@ -13,11 +13,13 @@ const meta = {
       },
     },
   },
-  tags: ["autodocs"],
-
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: {
+      control: { type: "inline-radio" },
+      options: ["#0D689E", "#A6C5E4"],
+    },
   },
+  tags: ["autodocs"],
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -26,18 +28,27 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     children: "Button",
+    backgroundColor: "#0D689E",
   },
 };
 
 export const Secondary: Story = {
   args: {
     children: "Button",
+    backgroundColor: "#A6C5E4",
   },
 };
 
 export const WithIcons: Story = {
   args: {
-    size: "large",
     children: "Button",
+    backgroundColor: "#A6C5E4",
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    children: "Button",
+    backgroundColor: "#e6e6e6",
   },
 };
