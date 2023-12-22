@@ -20,13 +20,12 @@ const meta = {
       options: ["Primary", "With Icons", "Disabled"],
     },
   },
-  tags: ["autodocs"],
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
     children: "Button",
     type: "Primary",
@@ -40,7 +39,28 @@ export const WithIcons: Story = {
   },
 };
 
-export const Disabled: Story = {
+export const FullWidth: Story = {
+  args: {
+    children: "Button",
+    type: "FullWidth",
+  },
+};
+
+export const Subtle: Story = {
+  args: {
+    children: "Button",
+    type: "FullWidth",
+  },
+};
+
+export const Circled: Story = {
+  args: {
+    children: "Button",
+    type: "FullWidth",
+  },
+};
+
+export const Destructive: Story = {
   args: {
     children: "Button",
     type: "Disabled",

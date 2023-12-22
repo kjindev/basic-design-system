@@ -31,6 +31,8 @@ export const Button = ({ type, children }: Props) => {
         fontSize: "14px",
         padding: "10px 14px",
         cursor: "pointer",
+        fontFamily: "Noto Sans KR",
+        fontWeight: "300",
       })}
     >
       {children}
