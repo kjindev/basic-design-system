@@ -1,25 +1,39 @@
 import { css } from "@emotion/react";
 
 interface Props {
-  backgroundColor?: string;
+  type: string;
   size?: "small" | "medium" | "large";
   children?: React.ReactNode;
 }
 
-// export const Button = () => {
-//   return <button type="button" css={css`
-//   color: hotpink;
-// `}>{children}</button>;
-// };
+const getTypeStyle = (type: string) => {
+  if (type === "Disabled") {
+    return {
+      backgroundColor: "#e6e6e6",
+      color: "#8a8a8a",
+    };
+  } else {
+    return {
+      backgroundColor: "#0D689E",
+      color: "white",
+    };
+  }
+};
 
-export const Button = ({ backgroundColor, size, children }: Props) => {
-  const style = css({
-    backgroundColor: backgroundColor,
-    border: "none",
-    borderRadius: "10px",
-    fontSize: "14px",
-    padding: "10px 14px",
-    cursor: "pointer",
-  });
-  return <button css={style}>{children}</button>;
+export const Button = ({ type, children }: Props) => {
+  return (
+    <button
+      css={css({
+        backgroundColor: getTypeStyle(type).backgroundColor,
+        color: getTypeStyle(type).color,
+        border: "none",
+        borderRadius: "10px",
+        fontSize: "14px",
+        padding: "10px 14px",
+        cursor: "pointer",
+      })}
+    >
+      {children}
+    </button>
+  );
 };
