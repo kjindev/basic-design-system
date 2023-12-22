@@ -1,43 +1,42 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import Interaction from "./Interaction";
+import List from "./List";
 
 const meta = {
-  title: "Foundation/Interaction",
-  component: Interaction,
+  title: "Components/List",
+  component: List,
   parameters: {
-    Interaction: "centered",
+    layout: "centered",
     docs: {
       source: {
-        code: "<Interaction>Interaction</Interaction>",
+        // code: "<Button>Button</Button>",
       },
     },
   },
   tags: ["autodocs"],
 
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
-} satisfies Meta<typeof Interaction>;
+  // argTypes: {
+  //   backgroundColor: { control: "color" },
+  // },
+} satisfies Meta<typeof List>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    label: "Interaction",
+    // label: "Button",
   },
 };
 
 export const Secondary: Story = {
   args: {
-    label: "Interaction",
+    // label: "Button",
   },
 };
 
 export const WithIcons: Story = {
   args: {
     size: "large",
-    label: "Interaction",
+    // label: "Button",
   },
 };
