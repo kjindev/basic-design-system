@@ -1,21 +1,21 @@
 import "./button.css";
 
-interface ButtonProps {
+interface  Props {
   primary?: boolean;
   backgroundColor?: string;
   size?: "small" | "medium" | "large";
-  label: string;
+  children: React.ReactNode;
 }
 
 export const Button = ({
   size = "medium",
   backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
+  children 
+ 
+}:  Props) => {
   return (
-    <button type="button" style={{ backgroundColor }} {...props}>
-      {label}
+    <button type="button" >
+      {children}
     </button>
   );
 };
