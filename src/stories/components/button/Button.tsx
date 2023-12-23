@@ -1,41 +1,81 @@
 import { css } from "@emotion/react";
-
+import icon from "../../assets/addCircle.svg";
 interface Props {
-  type: string;
+  type?: string;
+  isDestructive?: boolean;
   size?: "small" | "medium" | "large";
   children?: React.ReactNode;
 }
 
-const getTypeStyle = (type: string) => {
-  if (type === "Disabled") {
-    return {
-      backgroundColor: "#e6e6e6",
-      color: "#8a8a8a",
-    };
+export const Button = ({ type, isDestructive, children }: Props) => {
+  const style = {
+    display: "flex",
+    alignItems: "center",
+    border: "none",
+    fontSize: "14px",
+    cursor: "pointer",
+    fontFamily: "Noto Sans KR",
+    fontWeight: "400",
+    "& span": {
+      marginBottom: "1px",
+      paddingRight: type === "WithIcon" ? "6px" : "",
+    },
+  };
+  if (type === "Subtle") {
+    return (
+      <button
+        css={css(style, {
+          backgroundColor: isDestructive ? "#e6e6e6" : "#BAD5E8",
+          color: isDestructive ? "#8a8a8a" : "#0D689E",
+          padding: "10px 24px",
+          borderRadius: "10px",
+        })}
+      >
+        <span>{children}</span>
+      </button>
+    );
+  } else if (type === "WithIcon") {
+    return (
+      <button
+        css={css(style, {
+          backgroundColor: isDestructive ? "#e6e6e6" : "#0D689E",
+          color: isDestructive ? "#8a8a8a" : "white",
+          padding: "10px 24px",
+          borderRadius: "10px",
+          "& img": {
+            marginRight: "7px",
+          },
+        })}
+      >
+        <img src={icon} alt="icon" />
+        <span>{children}</span>
+      </button>
+    );
+  } else if (type === "IconOnly") {
+    return (
+      <button
+        css={css(style, {
+          backgroundColor: isDestructive ? "#e6e6e6" : "#0D689E",
+          color: isDestructive ? "#8a8a8a" : "white",
+          padding: "10px 12px",
+          borderRadius: "24px",
+        })}
+      >
+        <img src={icon} alt="icon" />
+      </button>
+    );
   } else {
-    return {
-      backgroundColor: "#0D689E",
-      color: "white",
-    };
+    return (
+      <button
+        css={css(style, {
+          backgroundColor: isDestructive ? "#e6e6e6" : "#0D689E",
+          color: isDestructive ? "#8a8a8a" : "white",
+          padding: "10px 24px",
+          borderRadius: "10px",
+        })}
+      >
+        <span>{children}</span>
+      </button>
+    );
   }
-};
-
-export const Button = ({ type, children }: Props) => {
-  return (
-    <button
-      css={css({
-        backgroundColor: getTypeStyle(type).backgroundColor,
-        color: getTypeStyle(type).color,
-        border: "none",
-        borderRadius: "10px",
-        fontSize: "14px",
-        padding: "10px 14px",
-        cursor: "pointer",
-        fontFamily: "Noto Sans KR",
-        fontWeight: "300",
-      })}
-    >
-      {children}
-    </button>
-  );
 };
