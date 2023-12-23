@@ -10,9 +10,9 @@ const meta = {
     componentSubtitle:
       "Button은 사용자에게 입력을 받을 수 있도록 돕는 컴포넌트입니다.",
     docs: {
-      source: {
-        code: "<Button>Button</Button>",
-      },
+      // source: {
+      //   code: "<Button>Button</Button>",
+      // },
       description: {
         component: `- example`,
       },

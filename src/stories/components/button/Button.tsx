@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import icon from "../../assets/addCircle.svg";
+import { ReactComponent as Svg } from "../../assets/addCircle.svg";
 interface Props {
   type?: string;
   isDestructive?: boolean;
@@ -7,18 +7,23 @@ interface Props {
   children?: React.ReactNode;
 }
 
-export const Button = ({ type, isDestructive, children }: Props) => {
+export const Button = ({ type, size, isDestructive, children }: Props) => {
+  const fontSize = {
+    small: 12,
+    medium: 14,
+    large: 18,
+  };
+
   const style = {
     display: "flex",
     alignItems: "center",
     border: "none",
-    fontSize: "14px",
+    fontSize: fontSize[size || "medium"],
     cursor: "pointer",
     fontFamily: "Noto Sans KR",
     fontWeight: "400",
     "& span": {
       marginBottom: "1px",
-      paddingRight: type === "WithIcon" ? "6px" : "",
     },
   };
   if (type === "Subtle") {
@@ -27,8 +32,10 @@ export const Button = ({ type, isDestructive, children }: Props) => {
         css={css(style, {
           backgroundColor: isDestructive ? "#e6e6e6" : "#BAD5E8",
           color: isDestructive ? "#8a8a8a" : "#0D689E",
-          padding: "10px 24px",
-          borderRadius: "10px",
+          padding: `${fontSize[size || "medium"]}px ${
+            fontSize[size || "medium"] * 2
+          }px`,
+          borderRadius: fontSize[size || "medium"],
         })}
       >
         <span>{children}</span>
@@ -40,14 +47,24 @@ export const Button = ({ type, isDestructive, children }: Props) => {
         css={css(style, {
           backgroundColor: isDestructive ? "#e6e6e6" : "#0D689E",
           color: isDestructive ? "#8a8a8a" : "white",
-          padding: "10px 24px",
-          borderRadius: "10px",
-          "& img": {
+          padding: `${fontSize[size || "medium"]}px ${
+            fontSize[size || "medium"] * 2
+          }px`,
+          borderRadius: fontSize[size || "medium"],
+          "& svg": {
             marginRight: "7px",
+          },
+          "& span": {
+            // marginBottom: "2px",
+            paddingRight: "6px",
           },
         })}
       >
-        <img src={icon} alt="icon" />
+        <Svg
+          width={fontSize[size || "medium"] * 1.2}
+          height={fontSize[size || "medium"] * 1.2}
+          fill={isDestructive ? "#8a8a8a" : "white"}
+        />
         <span>{children}</span>
       </button>
     );
@@ -57,11 +74,15 @@ export const Button = ({ type, isDestructive, children }: Props) => {
         css={css(style, {
           backgroundColor: isDestructive ? "#e6e6e6" : "#0D689E",
           color: isDestructive ? "#8a8a8a" : "white",
-          padding: "10px 12px",
-          borderRadius: "24px",
+          padding: fontSize[size || "medium"] / 1.5,
+          borderRadius: fontSize[size || "medium"] * 2,
         })}
       >
-        <img src={icon} alt="icon" />
+        <Svg
+          width={fontSize[size || "medium"] * 1.5}
+          height={fontSize[size || "medium"] * 1.5}
+          fill={isDestructive ? "#8a8a8a" : "white"}
+        />
       </button>
     );
   } else {
@@ -70,8 +91,10 @@ export const Button = ({ type, isDestructive, children }: Props) => {
         css={css(style, {
           backgroundColor: isDestructive ? "#e6e6e6" : "#0D689E",
           color: isDestructive ? "#8a8a8a" : "white",
-          padding: "10px 24px",
-          borderRadius: "10px",
+          padding: `${fontSize[size || "medium"]}px ${
+            fontSize[size || "medium"] * 2
+          }px`,
+          borderRadius: fontSize[size || "medium"],
         })}
       >
         <span>{children}</span>
