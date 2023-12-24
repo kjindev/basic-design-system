@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import React from "react";
 import { mainColor, subColor2 } from "../../../util/constant";
+import { ReactComponent as Svg } from "../../assets/cancel.svg";
 interface Props {
   type?: string;
   label?: string;
@@ -28,14 +29,14 @@ export const Alert = ({ type, withButton, label }: Props) => {
     return (
       <div css={css(style, { backgroundColor: "#fcc6c5", color: "#ff5a57" })}>
         {label}
-        {withButton && <div>X</div>}
+        {withButton && <Svg fill="#ff5a57" />}
       </div>
     );
   } else {
     return (
       <div css={css(style, { backgroundColor: subColor2, color: mainColor })}>
         {label}
-        {withButton && <div>X</div>}
+        {withButton && <Svg fill={mainColor} />}
       </div>
     );
   }
