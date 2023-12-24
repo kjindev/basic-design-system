@@ -20,12 +20,19 @@ export const Label = ({ type, label }: Props) => {
         backgroundColor: "#BAD5E8",
         "& span": {
           marginBottom: "2px",
-          paddingLeft: "3px",
         },
       })}
     >
       {type === "WithIcon" && <Svg width={12} height={12} fill="#0D689E" />}
-      <span>{label}</span>
+      <span
+        css={css(
+          type === "WithIcon" && {
+            paddingLeft: "3px",
+          }
+        )}
+      >
+        {label}
+      </span>
     </div>
   );
 };
