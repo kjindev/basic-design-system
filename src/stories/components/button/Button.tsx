@@ -3,6 +3,7 @@ import { ReactComponent as Svg } from "../../assets/addCircle.svg";
 interface Props {
   type?: string;
   isDestructive?: boolean;
+  // interactive?: "none" | "scale" | "color";
   size?: "small" | "medium" | "large";
   children?: React.ReactNode;
 }
@@ -19,11 +20,15 @@ export const Button = ({ type, size, isDestructive, children }: Props) => {
     alignItems: "center",
     border: "none",
     fontSize: fontSize[size || "medium"],
-    cursor: "pointer",
+    cursor: isDestructive ? "default" : "pointer",
     fontFamily: "Noto Sans KR",
     fontWeight: "400",
+    transition: "transform 0.25s ease-in-out",
     "& span": {
       marginBottom: "1px",
+    },
+    "&:hover": {
+      // transform: "scale(1.05)",
     },
   };
   if (type === "Subtle") {
