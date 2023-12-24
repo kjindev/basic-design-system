@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import React from "react";
+import { mainColor, subColor2 } from "../../../util/constant";
 interface Props {
   type?: string;
   label?: string;
@@ -32,7 +33,7 @@ export const Alert = ({ type, withButton, label }: Props) => {
     );
   } else {
     return (
-      <div css={css(style, { backgroundColor: "#BAD5E8", color: "#0D689E" })}>
+      <div css={css(style, { backgroundColor: subColor2, color: mainColor })}>
         {label}
         {withButton && <div>X</div>}
       </div>

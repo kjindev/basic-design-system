@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import { mainColor, subColor2 } from "../../../util/constant";
 
 interface Props {
   label?: string;
@@ -12,10 +13,10 @@ export const Link = ({ type, label }: Props) => {
         fontWeight: "400",
         fontSize: 14,
         cursor: "pointer",
-        color: "#0D689E",
+        color: mainColor,
         textDecoration: "underline #0D689E",
         "&:hover": {
-          color: "#BAD5E8",
+          color: subColor2,
           textDecoration: "underline #BAD5E8",
         },
       })}

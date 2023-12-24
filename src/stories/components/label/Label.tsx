@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import { ReactComponent as Svg } from "../../assets/addCircle.svg";
+import { mainColor, subColor2 } from "../../../util/constant";
 interface Props {
   label?: string;
   type?: string;
@@ -16,14 +17,14 @@ export const Label = ({ type, label }: Props) => {
         fontSize: 12,
         padding: "6px 10px",
         borderRadius: 12,
-        color: "#0D689E",
-        backgroundColor: "#BAD5E8",
+        color: mainColor,
+        backgroundColor: subColor2,
         "& span": {
           marginBottom: "2px",
         },
       })}
     >
-      {type === "WithIcon" && <Svg width={12} height={12} fill="#0D689E" />}
+      {type === "WithIcon" && <Svg width={12} height={12} fill={mainColor} />}
       <span
         css={css(
           type === "WithIcon" && {

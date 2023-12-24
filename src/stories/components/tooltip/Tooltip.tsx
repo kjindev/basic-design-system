@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import React, { useState } from "react";
+import { mainColor, subColor2 } from "../../../util/constant";
 interface Props {
   label?: string;
   type?: string;
@@ -28,8 +29,8 @@ export const Tooltip = ({ label, type }: Props) => {
           position: "absolute",
           transform: "translate(60%, -80%)",
           fontSize: 12,
-          backgroundColor: type === "DarkMode" ? "#0D689E" : "#BAD5E8",
-          color: type === "DarkMode" ? "white" : "#0D689E",
+          backgroundColor: type === "DarkMode" ? mainColor : subColor2,
+          color: type === "DarkMode" ? "white" : mainColor,
           padding: "10px 12px",
           borderRadius: 12,
         },

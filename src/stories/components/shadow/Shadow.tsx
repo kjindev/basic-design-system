@@ -1,10 +1,12 @@
+import { mainColor } from "../../../util/constant";
+
 interface Props {
   type?: string;
   colored?: boolean;
 }
 
 export const Shadow = ({ type, colored }: Props) => {
-  const color = colored ? "#0D689E20" : "rgb(0, 0, 0, 0.1)";
+  const color = colored ? `${mainColor}20` : "rgb(0, 0, 0, 0.1)";
 
   return (
     <div
