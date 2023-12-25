@@ -8,43 +8,33 @@ const meta = {
     controls: { exclude: ["children", "type"] },
     layout: "centered",
     componentSubtitle:
-      "Button은 사용자에게 입력을 받을 수 있도록 돕는 컴포넌트입니다.",
+      "Button은 사용자와의 상호작용을 유도하고, 특정 액션을 트리거하기 위해 사용하는 컴포넌트입니다.",
     docs: {
       // source: {
       //   code: "<Button>Button</Button>",
       // },
-      description: {
-        component: `- example`,
-      },
+      // description: {
+      //   component: `- example`,
+      // },
     },
   },
   argTypes: {
-    // children: {
-    //   description: "Button 속의 내용을 결정합니다.",
-    // },
-    // size: {
-    //   description: "Button의 크기를 결정합니다.",
-    //   table: {
-    //     // type: { summary: "boolean" },
-    //     defaultValue: { summary: "medium" },
-    //     // category: "Tabs.Trigger",
-    //   },
-    //   defaultValue: "medium",
-    // },
-    // fullWidth: {
-    //   description: "Button의 넓이를 결정합니다.",
-    //   table: {
-    //     type: { summary: "boolean" },
-    //     defaultValue: { summary: false },
-    //     // category: "Tabs.Trigger",
-    //   },
-    //   defaultValue: false,
-    // },
-    // size: {
-    //   control: { type: "radio" },
-    //   defaultValue: "medium",
-    //   options: ["small", "medium", "large"],
-    // },
+    size: {
+      description: "Button의 크기를 결정합니다.",
+      table: {
+        defaultValue: { summary: "small" },
+        // category: "Tabs.Trigger",
+      },
+      defaultValue: "small",
+    },
+    Destructive: {
+      description: "Button의 사용 가능 여부를 결정합니다.",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: false },
+      },
+      defaultValue: false,
+    },
   },
   args: {
     size: "small",
@@ -58,7 +48,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: "Button",
-    isDestructive: false,
+    Destructive: false,
   },
   // parameters: {
   //   backgrounds: {

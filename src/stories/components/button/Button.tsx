@@ -1,13 +1,14 @@
 import { css } from "@emotion/react";
 import { ReactComponent as Svg } from "../../assets/addCircle.svg";
+import { mainColor, subColor2 } from "../../../util/constant";
 interface Props {
   type?: string;
-  isDestructive?: boolean;
+  Destructive?: boolean;
   size?: "small" | "medium" | "large";
-  children?: React.ReactNode;
+  children?: string;
 }
 
-export const Button = ({ type, size, isDestructive, children }: Props) => {
+export const Button = ({ type, size, Destructive, children }: Props) => {
   const fontSize = {
     small: 12,
     medium: 14,
@@ -19,9 +20,10 @@ export const Button = ({ type, size, isDestructive, children }: Props) => {
     alignItems: "center",
     border: "none",
     fontSize: fontSize[size || "medium"],
-    cursor: "pointer",
+    cursor: Destructive ? "default" : "pointer",
     fontFamily: "Noto Sans KR",
     fontWeight: "400",
+    transition: "transform 0.25s ease-in-out",
     "& span": {
       marginBottom: "1px",
     },
@@ -30,8 +32,8 @@ export const Button = ({ type, size, isDestructive, children }: Props) => {
     return (
       <button
         css={css(style, {
-          backgroundColor: isDestructive ? "#e6e6e6" : "#BAD5E8",
-          color: isDestructive ? "#8a8a8a" : "#0D689E",
+          backgroundColor: Destructive ? "#e6e6e6" : subColor2,
+          color: Destructive ? "#8a8a8a" : mainColor,
           padding: `${fontSize[size || "medium"]}px ${
             fontSize[size || "medium"] * 2
           }px`,
@@ -45,8 +47,8 @@ export const Button = ({ type, size, isDestructive, children }: Props) => {
     return (
       <button
         css={css(style, {
-          backgroundColor: isDestructive ? "#e6e6e6" : "#0D689E",
-          color: isDestructive ? "#8a8a8a" : "white",
+          backgroundColor: Destructive ? "#e6e6e6" : mainColor,
+          color: Destructive ? "#8a8a8a" : "white",
           padding: `${fontSize[size || "medium"]}px ${
             fontSize[size || "medium"] * 2
           }px`,
@@ -63,7 +65,7 @@ export const Button = ({ type, size, isDestructive, children }: Props) => {
         <Svg
           width={fontSize[size || "medium"] * 1.2}
           height={fontSize[size || "medium"] * 1.2}
-          fill={isDestructive ? "#8a8a8a" : "white"}
+          fill={Destructive ? "#8a8a8a" : "white"}
         />
         <span>{children}</span>
       </button>
@@ -72,8 +74,8 @@ export const Button = ({ type, size, isDestructive, children }: Props) => {
     return (
       <button
         css={css(style, {
-          backgroundColor: isDestructive ? "#e6e6e6" : "#0D689E",
-          color: isDestructive ? "#8a8a8a" : "white",
+          backgroundColor: Destructive ? "#e6e6e6" : mainColor,
+          color: Destructive ? "#8a8a8a" : "white",
           padding: fontSize[size || "medium"] / 1.5,
           borderRadius: fontSize[size || "medium"] * 2,
         })}
@@ -81,7 +83,7 @@ export const Button = ({ type, size, isDestructive, children }: Props) => {
         <Svg
           width={fontSize[size || "medium"] * 1.5}
           height={fontSize[size || "medium"] * 1.5}
-          fill={isDestructive ? "#8a8a8a" : "white"}
+          fill={Destructive ? "#8a8a8a" : "white"}
         />
       </button>
     );
@@ -89,8 +91,8 @@ export const Button = ({ type, size, isDestructive, children }: Props) => {
     return (
       <button
         css={css(style, {
-          backgroundColor: isDestructive ? "#e6e6e6" : "#0D689E",
-          color: isDestructive ? "#8a8a8a" : "white",
+          backgroundColor: Destructive ? "#e6e6e6" : mainColor,
+          color: Destructive ? "#8a8a8a" : "white",
           padding: `${fontSize[size || "medium"]}px ${
             fontSize[size || "medium"] * 2
           }px`,
