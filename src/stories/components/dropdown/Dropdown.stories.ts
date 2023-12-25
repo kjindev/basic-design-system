@@ -7,23 +7,21 @@ const meta = {
   parameters: {
     controls: { exclude: ["type"] },
     layout: "centered",
-    componentSubtitle: "Dropdown은 사용자에게 알림을 전달하는 컴포넌트입니다.",
+    componentSubtitle:
+      "Dropdown은 사용자에게 선택 옵션을 나열하고, 그 중 하나를 선택할 수 있도록 돕는 컴포넌트입니다.",
   },
-  // argTypes: {
-  //   withButton: {
-  //     description: "Dropdown의 버튼 유무 결정합니다.",
-  //     table: {
-  //       defaultValue: { summary: false },
-  //     },
-  //     defaultValue: false,
-  //   },
-  //   label: {
-  //     description: "Dropdown의 내용입니다.",
-  //   },
-  // },
-  // args: {
-  //   withButton: false,
-  // },
+  argTypes: {
+    withIcon: {
+      description: "Dropdown의 아이콘 유무 결정합니다.",
+      table: {
+        defaultValue: { summary: false },
+      },
+      defaultValue: false,
+    },
+  },
+  args: {
+    withIcon: true,
+  },
   tags: ["autodocs"],
 } satisfies Meta<typeof Dropdown>;
 
@@ -32,13 +30,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    label: "This is information Dropdown.",
+    withIcon: true,
   },
 };
 
 export const Destructive: Story = {
   args: {
-    label: "This is error Dropdown.",
+    withIcon: true,
     type: "Destructive",
   },
 };

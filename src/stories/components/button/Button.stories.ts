@@ -8,14 +8,14 @@ const meta = {
     controls: { exclude: ["children", "type"] },
     layout: "centered",
     componentSubtitle:
-      "Button은 사용자에게 입력을 받을 수 있도록 돕는 컴포넌트입니다.",
+      "Button은 사용자와의 상호작용을 유도하고, 특정 액션을 트리거하기 위해 사용하는 컴포넌트입니다.",
     docs: {
       // source: {
       //   code: "<Button>Button</Button>",
       // },
-      description: {
-        component: `- example`,
-      },
+      // description: {
+      //   component: `- example`,
+      // },
     },
   },
   argTypes: {
@@ -27,7 +27,7 @@ const meta = {
       },
       defaultValue: "small",
     },
-    isDestructive: {
+    Destructive: {
       description: "Button의 사용 가능 여부를 결정합니다.",
       table: {
         type: { summary: "boolean" },
@@ -35,17 +35,6 @@ const meta = {
       },
       defaultValue: false,
     },
-    // interactive: {
-    //   description:
-    //     "Button에 마우스를 올렸을 때의 효과를 결정합니다. isDestructive가 true일 때는 작동하지 않습니다.",
-    //   table: {
-    //     defaultValue: { summary: "none" },
-    //   },
-    //   control: {
-    //     type: "radio",
-    //   },
-    //   defaultValue: "none",
-    // },
   },
   args: {
     size: "small",
@@ -59,7 +48,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: "Button",
-    isDestructive: false,
+    Destructive: false,
   },
   // parameters: {
   //   backgrounds: {

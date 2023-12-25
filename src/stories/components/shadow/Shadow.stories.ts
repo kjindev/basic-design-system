@@ -7,7 +7,8 @@ const meta = {
   parameters: {
     controls: { exclude: ["type"] },
     layout: "centered",
-    componentSubtitle: "Shadow는 컴포넌트의 그림자 깊이를 결정합니다.",
+    componentSubtitle:
+      "Shadow는 그림자 효과를 화면에 부여하여 시각적인 깊이를 제공하는 역할을 합니다.",
   },
   argTypes: {
     colored: {

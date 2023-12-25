@@ -6,10 +6,10 @@ import { ReactComponent as Svg2 } from "../../assets/expand_less.svg";
 
 interface Props {
   type?: string;
-  label?: string;
+  withIcon?: boolean;
 }
 
-export const Dropdown = ({ type, label }: Props) => {
+export const Dropdown = ({ type, withIcon }: Props) => {
   const arrayLength = 4;
   const [isHover, setIsHover] = useState(false);
 
@@ -38,7 +38,7 @@ export const Dropdown = ({ type, label }: Props) => {
         <div id="selectBox">
           <div className="label">
             <div>Select Here</div>
-            <Svg fill={greyText} />
+            {withIcon && <Svg fill={greyText} />}
           </div>
         </div>
       </div>
@@ -76,6 +76,10 @@ export const Dropdown = ({ type, label }: Props) => {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
+            "& svg": {
+              display: "flex",
+              alignItems: "center",
+            },
           },
           "& .option": {
             position: "absolute",
@@ -115,7 +119,7 @@ export const Dropdown = ({ type, label }: Props) => {
           >
             <div className="labelBox">
               <div>Select Here</div>
-              {isHover ? <Svg2 /> : <Svg />}
+              {withIcon && <div>{isHover ? <Svg2 /> : <Svg />}</div>}
             </div>
           </div>
           <div className={isHover ? "option" : "option-hidden"}>

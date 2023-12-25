@@ -8,10 +8,10 @@ const meta = {
     controls: { exclude: ["type"] },
     layout: "centered",
     componentSubtitle:
-      "Link는 다른 페이지로 이동하는 기능을 가진 글자의 스타일을 정의합니다.",
+      "Link는 사용자를 다른 페이지로 이동하거나 외부 리소스로 연결하는데 사용되는 하이퍼링크를 생성하는 역할을 하는 컴포넌트입니다.",
   },
   argTypes: {
-    label: {
+    children: {
       description: "Link의 내용입니다.",
     },
   },
@@ -24,6 +24,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    label: "Link is here",
+    children: "Link is here",
   },
 };

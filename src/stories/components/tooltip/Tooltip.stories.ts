@@ -8,10 +8,10 @@ const meta = {
     controls: { exclude: ["type"] },
     layout: "centered",
     componentSubtitle:
-      "Tooltip은 컴포넌트에 마우스를 올리면 정보가 나타나게 하는 효과를 정의합니다.",
+      "Tooltip은 마우스 호버 또는 다른 상호 작용에 응답하여 추가 정보나 설명을 사용자에게 제공하는 역할을 하는 컴포넌트입니다.",
   },
   argTypes: {
-    label: {
+    children: {
       description: "Tooltip의 내용입니다.",
     },
   },
@@ -24,13 +24,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    label: "The quick brown fox jumps over the lazy dog.",
+    children: "The quick brown fox jumps over the lazy dog.",
   },
 };
 
 export const DarkMode: Story = {
   args: {
-    label: "The quick brown fox jumps over the lazy dog.",
+    children: "The quick brown fox jumps over the lazy dog.",
     type: "DarkMode",
   },
 };

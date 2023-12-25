@@ -8,7 +8,7 @@ const meta = {
     controls: { exclude: ["label", "type"] },
     layout: "centered",
     componentSubtitle:
-      "Modal은 부가적인 설명을 추가할 때 사용하는 컴포넌트입니다.",
+      "Modal은 사용자에게 추가 정보를 제공하는 컴포넌트입니다.",
   },
   argTypes: {
     withIcon: {
@@ -26,6 +26,10 @@ const meta = {
       },
       defaultValue: true,
     },
+
+    children: {
+      description: "Modal의 내용입니다.",
+    },
   },
   args: {
     withIcon: false,
@@ -40,17 +44,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     type: "Default",
-  },
-};
-
-export const WithSelect: Story = {
-  args: {
-    type: "WithSelect",
-  },
-};
-
-export const WithInput: Story = {
-  args: {
-    type: "WithInput",
+    children: `The bird fights its way out of the egg. The egg is the world. Who would
+    be born must first destroy a world.`,
   },
 };

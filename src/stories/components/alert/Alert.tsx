@@ -4,11 +4,11 @@ import { mainColor, subColor2 } from "../../../util/constant";
 import { ReactComponent as Svg } from "../../assets/cancel.svg";
 interface Props {
   type?: string;
-  label?: string;
+  children?: string;
   withButton?: boolean;
 }
 
-export const Alert = ({ type, withButton, label }: Props) => {
+export const Alert = ({ type, withButton, children }: Props) => {
   const style = {
     width: "300px",
     display: "flex",
@@ -28,14 +28,14 @@ export const Alert = ({ type, withButton, label }: Props) => {
   if (type === "Error") {
     return (
       <div css={css(style, { backgroundColor: "#fcc6c5", color: "#ff5a57" })}>
-        {label}
+        {children}
         {withButton && <Svg fill="#ff5a57" />}
       </div>
     );
   } else {
     return (
       <div css={css(style, { backgroundColor: subColor2, color: mainColor })}>
-        {label}
+        {children}
         {withButton && <Svg fill={mainColor} />}
       </div>
     );

@@ -4,13 +4,13 @@ import { mainColor } from "../../../util/constant";
 import React from "react";
 
 interface Props {
-  label?: string;
+  children?: string;
   type?: string;
   withIcon?: boolean;
   withButton?: boolean;
 }
 
-export const Modal = ({ type, withIcon, withButton }: Props) => {
+export const Modal = ({ children, type, withIcon, withButton }: Props) => {
   return (
     <div
       css={css({
@@ -49,13 +49,7 @@ export const Modal = ({ type, withIcon, withButton }: Props) => {
     >
       {withIcon && <Svg fill={mainColor} />}
       <div className="title">Modal Title</div>
-      <div className="content">
-        {type === "Default" &&
-          `The bird fights its way out of the egg. The egg is the world. Who would
-        be born must first destroy a world. The bird flies to God. That God's
-        name is Abraxas.`}
-        {type === "WithInput" && <input placeholder="Text1" />}
-      </div>
+      <div className="content">{children}</div>
       {withButton && <Button children="Check" />}
     </div>
   );

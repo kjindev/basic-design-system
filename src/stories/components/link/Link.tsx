@@ -2,16 +2,16 @@ import { css } from "@emotion/react";
 import { mainColor, subColor2 } from "../../../util/constant";
 
 interface Props {
-  label?: string;
-  type?: string;
+  children?: string;
 }
 
-export const Link = ({ type, label }: Props) => {
+export const Link = ({ children }: Props) => {
   return (
     <div
       css={css({
         fontWeight: "400",
         fontSize: 14,
+        fontFamily: "Noto Sans KR",
         cursor: "pointer",
         color: mainColor,
         textDecoration: "underline #0D689E",
@@ -21,7 +21,7 @@ export const Link = ({ type, label }: Props) => {
         },
       })}
     >
-      {label}
+      {children}
     </div>
   );
 };

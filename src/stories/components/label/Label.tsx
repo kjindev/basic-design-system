@@ -2,11 +2,11 @@ import { css } from "@emotion/react";
 import { ReactComponent as Svg } from "../../assets/addCircle.svg";
 import { mainColor, subColor2 } from "../../../util/constant";
 interface Props {
-  label?: string;
+  children?: string;
   type?: string;
 }
 
-export const Label = ({ type, label }: Props) => {
+export const Label = ({ type, children }: Props) => {
   return (
     <div
       css={css({
@@ -32,7 +32,7 @@ export const Label = ({ type, label }: Props) => {
           }
         )}
       >
-        {label}
+        {children}
       </span>
     </div>
   );

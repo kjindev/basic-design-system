@@ -2,11 +2,11 @@ import { css } from "@emotion/react";
 import React, { useState } from "react";
 import { mainColor, subColor2 } from "../../../util/constant";
 interface Props {
-  label?: string;
+  children?: string;
   type?: string;
 }
 
-export const Tooltip = ({ label, type }: Props) => {
+export const Tooltip = ({ children, type }: Props) => {
   const [isHover, setIsHover] = useState(false);
 
   return (
@@ -41,9 +41,9 @@ export const Tooltip = ({ label, type }: Props) => {
         onMouseOver={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
       >
-        Test Component
+        Hover
       </div>
-      <div className={isHover ? "tooltip" : "tooltip-hidden"}>{label}</div>
+      <div className={isHover ? "tooltip" : "tooltip-hidden"}>{children}</div>
     </div>
   );
 };

@@ -17,7 +17,7 @@ const meta = {
       },
       defaultValue: false,
     },
-    label: {
+    children: {
       description: "Alert의 내용입니다.",
     },
   },
@@ -32,13 +32,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    label: "This is information alert.",
+    children: "This is information alert.",
   },
 };
 
 export const Error: Story = {
   args: {
-    label: "This is error alert.",
+    children: "This is error alert.",
     type: "Error",
   },
 };
