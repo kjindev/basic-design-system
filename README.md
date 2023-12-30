@@ -1,18 +1,35 @@
-# Basic Design System
+# BASIC DESIGN SYSTEM
 
-디자인 시스템 프로젝트입니다.
+<br />
 
-### 주제
+<div align="center">
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fwm3oY%2FbtsCSbQPW3L%2FEoKowM15tKrKImzSR4JYyk%2Fimg.png" width="200" />
+</div>
 
-- 일관성 있는 디자인 구현을 위한 디자인 시스템 구축
+<br />
 
-### 개요
+Hello, It's **BASIC DESIGN SYSTEM**. It uses the Storybook to provide guidelines for UI components. From color, font to UI components, it is designed to give consistency to the design of your project. Look at the shape of the UI components and change the arguments to see how the UI works.
 
-- 개발 인원 : 1인 (개인 프로젝트)
-- 개발 기간 : 2022.12.
+<br />
 
-#### 사용 기술
+## How to use
 
-- 코어: <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/> <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/> <img src="https://img.shields.io/badge/Storybook-FF4785?style=flat-square&logo=React&logoColor=white"/>
+1.  **Check UI Components**
 
-- 스타일링: <img src="https://img.shields.io/badge/Emotion-D36AC2?style=flat-square"/>
+    Check out the various UI components docs provides a complete summary of the components, and you can click on the list of each component for more information.
+
+2.  **Change Arguments**
+
+    You can change arguments in the Control of docs.
+    Check the behavior of the component by changing the content.
+
+<br />
+
+## Development Stacks
+
+This design system was developed using the following development stacks:
+
+- **Language:** TypeScript
+- **Core:** React, StoryBook
+- **Package Management:** Yarn
+- **Version Control:** Git
